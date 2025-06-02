@@ -1,3 +1,179 @@
-1
-2
-3
+# GEO 文件加载模式，可选的加载模式如下：
+# standard：标准加载器
+# memconservative：专为内存受限 (小内存) 设备优化的加载器 (默认值)
+geodata-loader: standard
+#
+
+# 自动更新 GEO
+geo-auto-update: true
+
+# 更新间隔，单位为小时
+geo-update-interval: 2
+
+geox-url:
+  geoip: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat'
+  geosite: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat'
+  mmdb: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb'
+  asn: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb'
+  
+rule-providers:
+  广告拦截:
+    url: https://rules.xkww3n.cyou/yaml/reject.yaml
+    path: ./ruleset/广告拦截.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  域名排除:
+    url: https://rules.xkww3n.cyou/yaml/exclude.yaml
+    path: ./ruleset/域名排除.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  private:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.yaml
+    path: ./ruleset/private.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  cn_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml
+    path: ./ruleset/cn_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  telegram_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.yaml
+    path: ./ruleset/telegram_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  google_domain:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
+    path: ./ruleset/google_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  geolocation-!cn:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
+    path: ./ruleset/geolocation-!cn.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  cn_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml
+    path: ./ruleset/cn_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+  telegram_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.yaml
+    path: ./ruleset/telegram_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+  google_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml
+    path: ./ruleset/google_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
+  bing:
+    url: https://rules.xkww3n.cyou/yaml/bing.yaml
+    path: ./ruleset/bing.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
+  copilot:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml
+    path: ./ruleset/copilot.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
+  claude:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml
+    path: ./ruleset/claude.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
+  bard:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BardAI/BardAI.yaml
+    path: ./ruleset/bard.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
+  openai:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/openai.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
+  steam:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/steam.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
+
+proxy-groups:
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
+    include-all: true
+    exclude-filter: (?i)2x|剩余流量|距离下次重置|套餐到期|如果很少节点|超时
+    name: 全自动一AUTO
+    type: url-test
+    health-check:
+    enable: true
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    lazy: false 
+  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
+    include-all: true
+    exclude-filter: (?i)^(?!.*香港.*协议)(?!.*美国)(?!.*日本)(?!.*台湾)(?!.*荷兰).*|倍率|圣何塞
+    name: GPTAI一主
+    type: url-test
+    health-check:
+    enable: false 
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+#    lazy: true
+#  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png (?!.*香港.*协议)
+#    include-all: true
+#    exclude-filter: (?i)^(?!.*美国).*|gpt
+#    name: GPTAI一备
+#    type: url-test
+#    url: "https://api.openai.com/v1/models"
+#    interval: 300
+#    lazy: true
+rules:
+  - "RULE-SET,广告拦截,REJECT"
+  - "RULE-SET,域名排除,DIRECT"
+  - "RULE-SET,private,DIRECT"
+  - "RULE-SET,bing,DIRECT"
+  - "RULE-SET,copilot,GPTAI一主"
+#  - "RULE-SET,bard,AIGC"
+  - "RULE-SET,openai,GPTAI一主"
+#  - "RULE-SET,claude,AIGC"
+#  - "RULE-SET,steam,PROXY"
+  - "RULE-SET,telegram_domain,GPTAI一主"
+  - "RULE-SET,telegram_ip,GPTAI一主"
+#  - "RULE-SET,google_domain,Google"
+#  - "RULE-SET,google_ip,Google"
+#  - "RULE-SET,geolocation-!cn,PROXY"
+  - "RULE-SET,cn_domain,DIRECT"
+  - "RULE-SET,cn_ip,DIRECT"
+  - "MATCH, 全自动一AUTO"
