@@ -49,6 +49,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  jd:
+    url: https://raw.githubusercontent.com/INT-boot/Mihomo-test/refs/heads/main/jd.yaml
+    path: ./ruleset/cn_domain.yaml
+    behavior: domain
+    interval: 86400
+    format: yaml
+    type: http
   telegram_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.yaml
     path: ./ruleset/telegram_domain.yaml
@@ -166,9 +173,6 @@ proxy-groups:
 rules:
   - "RULE-SET,广告拦截,REJECT"
   - "RULE-SET,域名排除,DIRECT"
-  - "DOMAIN-SUFFIX,jd.com,DIRECT"
-  - "DOMAIN-SUFFIX,jdcloud-oss.com,DIRECT"
-  - "DOMAIN-SUFFIX,jdl.com,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,DIRECT"
   - "RULE-SET,copilot,GPTAI一主"
@@ -183,4 +187,5 @@ rules:
 #  - "RULE-SET,geolocation-!cn,PROXY"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
+  - "RULE-SET,jd,DIRECT"
   - "MATCH, 全自动一AUTO"
