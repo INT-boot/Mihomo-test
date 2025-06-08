@@ -1,5 +1,5 @@
 payload:
-  - '+.jd.com'
-  - '+.jdcloud-oss.com'
-  - '+.jdl.com'
-  - '+.jingdonghealth.cn'
+  - DOMAIN-SUFFIX,d.com'
+  - DOMAIN-SUFFIX,jdcloud-oss.com'
+  - DOMAIN-SUFFIX,jdl.com'
+  - DOMAIN-SUFFIX,jingdonghealth.cn'
