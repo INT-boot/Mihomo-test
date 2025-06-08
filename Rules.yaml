@@ -173,7 +173,7 @@ proxy-groups:
 rules:
   - "RULE-SET,广告拦截_domain,REJECT"
   - "RULE-SET,域名排除_domain,DIRECT"
-  - "RULE-SET,私有_domain,DIRECT"
+  - "RULE-SET,私有网络_domain,DIRECT"
   - "RULE-SET,jd_domain,DIRECT"
   - "RULE-SET,bing_domain,DIRECT"
   - "RULE-SET,copilot_classical,GPTAI一主"
