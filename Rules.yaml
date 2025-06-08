@@ -166,7 +166,9 @@ proxy-groups:
 rules:
   - "RULE-SET,广告拦截,REJECT"
   - "RULE-SET,域名排除,DIRECT"
-#  - "DOMAIN-SUFFIX,jd.com,DIRECT"
+  - "DOMAIN-SUFFIX,jd.com,DIRECT"
+  - "DOMAIN-SUFFIX,jdcloud-oss.com,DIRECT"
+  - "DOMAIN-SUFFIX,jdl.com,DIRECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,DIRECT"
   - "RULE-SET,copilot,GPTAI一主"
