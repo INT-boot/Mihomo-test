@@ -171,7 +171,7 @@ proxy-groups:
 #    interval: 300
 #    lazy: true
 +rules:
-  - "DOMAIN-SUFFIX,jd.com"
+  - "DOMAIN-SUFFIX,jd.com,DIRECT"
 rules:
   - "RULE-SET,广告拦截_domain,REJECT"
   - "RULE-SET,域名排除_domain,DIRECT"
