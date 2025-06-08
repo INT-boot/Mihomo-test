@@ -37,7 +37,7 @@ rule-providers:
     type: http
   私有网络_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.yaml
-    path: ./ruleset/私有_domain.yaml
+    path: ./ruleset/私有网络_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
