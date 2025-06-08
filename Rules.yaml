@@ -175,7 +175,7 @@ rules:
   - "RULE-SET,广告拦截_domain,REJECT"
   - "RULE-SET,域名排除_domain,DIRECT"
   - "RULE-SET,私有网络_domain,DIRECT"
-  - "DOMAIN-SUFFIX,jd.com,DIRECT"
+#  - "DOMAIN-SUFFIX,jd.com,DIRECT"
 #  - "RULE-SET,jd_classical,DIRECT"
   - "RULE-SET,bing_domain,DIRECT"
   - "RULE-SET,cn_domain,DIRECT"
