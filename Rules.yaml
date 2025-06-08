@@ -126,7 +126,7 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  openai:
+  openai_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
     path: ./ruleset/openai_classical.yaml
     behavior: classical
