@@ -170,6 +170,8 @@ proxy-groups:
 #    url: "https://api.openai.com/v1/models"
 #    interval: 300
 #    lazy: true
++rules:
+  - "DOMAIN-SUFFIX,jd.com"
 rules:
   - "RULE-SET,广告拦截_domain,REJECT"
   - "RULE-SET,域名排除_domain,DIRECT"
