@@ -49,10 +49,10 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  jd_domain:
+  jd_classical:
     url: https://raw.githubusercontent.com/INT-boot/Mihomo-test/refs/heads/main/jd_domain.yaml
-    path: ./ruleset/jd_domain.yaml
-    behavior: domain
+    path: ./ruleset/jd_classical.yaml
+    behavior: classical
     interval: 86400
     format: yaml
     type: http
@@ -174,7 +174,7 @@ rules:
   - "RULE-SET,广告拦截_domain,REJECT"
   - "RULE-SET,域名排除_domain,DIRECT"
   - "RULE-SET,私有网络_domain,DIRECT"
-  - "RULE-SET,jd_domain,DIRECT"
+  - "RULE-SET,jd_classical,DIRECT"
   - "RULE-SET,bing_domain,DIRECT"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,telegram_domain,GPTAI一主"
