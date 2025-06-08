@@ -51,7 +51,7 @@ rule-providers:
     type: http
   jd:
     url: https://raw.githubusercontent.com/INT-boot/Mihomo-test/refs/heads/main/jd.yaml
-    path: ./ruleset/cn_domain.yaml
+    path: ./ruleset/jd.yaml
     behavior: domain
     interval: 86400
     format: yaml
