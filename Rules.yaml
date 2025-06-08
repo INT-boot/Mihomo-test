@@ -21,23 +21,23 @@ geox-url:
   asn: 'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb'
   
 rule-providers:
-  广告拦截:
+  广告拦截_domain:
     url: https://rules.xkww3n.cyou/yaml/reject.yaml
-    path: ./ruleset/广告拦截.yaml
+    path: ./ruleset/广告拦截_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
-  域名排除:
+  域名排除_domain:
     url: https://rules.xkww3n.cyou/yaml/exclude.yaml
-    path: ./ruleset/域名排除.yaml
+    path: ./ruleset/域名排除_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
-  private:
+  私有网络_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.yaml
-    path: ./ruleset/private.yaml
+    path: ./ruleset/私有_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
@@ -49,9 +49,9 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  jd:
-    url: https://raw.githubusercontent.com/INT-boot/Mihomo-test/refs/heads/main/jd.yaml
-    path: ./ruleset/jd.yaml
+  jd_domain:
+    url: https://raw.githubusercontent.com/INT-boot/Mihomo-test/refs/heads/main/jd_domain.yaml
+    path: ./ruleset/jd_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
@@ -70,9 +70,9 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  geolocation-!cn:
+  geolocation-!cn_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
-    path: ./ruleset/geolocation-!cn.yaml
+    path: ./ruleset/geolocation-!cn_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
@@ -98,44 +98,44 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  bing:
+  bing_domain:
     url: https://rules.xkww3n.cyou/yaml/bing.yaml
-    path: ./ruleset/bing.yaml
+    path: ./ruleset/bing_domain.yaml
     behavior: domain
     interval: 86400
     format: yaml
     type: http
-  copilot:
+  copilot_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml
-    path: ./ruleset/copilot.yaml
+    path: ./ruleset/copilot_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
-  claude:
+  claude_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml
-    path: ./ruleset/claude.yaml
+    path: ./ruleset/claude_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
-  bard:
+  bard_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BardAI/BardAI.yaml
-    path: ./ruleset/bard.yaml
+    path: ./ruleset/bard_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
   openai:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./ruleset/openai.yaml
+    path: ./ruleset/openai_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
     type: http
-  steam:
+  steam_classical:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
-    path: ./ruleset/steam.yaml
+    path: ./ruleset/steam_classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
@@ -171,21 +171,21 @@ proxy-groups:
 #    interval: 300
 #    lazy: true
 rules:
-  - "RULE-SET,广告拦截,REJECT"
-  - "RULE-SET,域名排除,DIRECT"
-  - "RULE-SET,private,DIRECT"
-  - "RULE-SET,bing,DIRECT"
-  - "RULE-SET,copilot,GPTAI一主"
-#  - "RULE-SET,bard,AIGC"
-  - "RULE-SET,openai,GPTAI一主"
-#  - "RULE-SET,claude,AIGC"
-#  - "RULE-SET,steam,PROXY"
+  - "RULE-SET,广告拦截_domain,REJECT"
+  - "RULE-SET,域名排除_domain,DIRECT"
+  - "RULE-SET,私有_domain,DIRECT"
+  - "RULE-SET,jd_domain,DIRECT"
+  - "RULE-SET,bing_domain,DIRECT"
+  - "RULE-SET,copilot_classical,GPTAI一主"
+#  - "RULE-SET,bard_classical,AIGC"
+  - "RULE-SET,openai_classical,GPTAI一主"
+#  - "RULE-SET,claude_classical,AIGC"
+#  - "RULE-SET,steam_classical,PROXY"
   - "RULE-SET,telegram_domain,GPTAI一主"
   - "RULE-SET,telegram_ip,GPTAI一主"
 #  - "RULE-SET,google_domain,Google"
 #  - "RULE-SET,google_ip,Google"
-#  - "RULE-SET,geolocation-!cn,PROXY"
-  - "RULE-SET,cn_domain,DIRECT"
+#  - "RULE-SET,geolocation-!cn_domain,PROXY"
+  - "RULE-SET,cn_domain_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
-  - "RULE-SET,jd,DIRECT"
   - "MATCH, 全自动一AUTO"
