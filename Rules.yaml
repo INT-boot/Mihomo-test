@@ -172,8 +172,8 @@ proxy-groups:
 #    lazy: true
 
 rules:
-  - "RULE-SET,广告拦截_domain,REJECT"
-  - "RULE-SET,域名排除_domain,DIRECT"
+#  - "RULE-SET,广告拦截_domain,REJECT"
+#  - "RULE-SET,域名排除_domain,DIRECT"
   - "RULE-SET,私有网络_domain,DIRECT"
 #  - "DOMAIN-SUFFIX,jd.com,DIRECT"
 #  - "RULE-SET,jd_classical,DIRECT"
