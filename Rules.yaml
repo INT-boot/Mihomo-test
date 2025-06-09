@@ -177,7 +177,7 @@ rules:
   - "RULE-SET,私有网络_domain,DIRECT"
 #  - "DOMAIN-SUFFIX,jd.com,DIRECT"
 #  - "RULE-SET,jd_classical,DIRECT"
-  - "RULE-SET,bing_domain,DIRECT"
+  - "RULE-SET,bing_domain,GPTAI一主"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,telegram_domain,GPTAI一主"
   - "RULE-SET,copilot_classical,GPTAI一主"
